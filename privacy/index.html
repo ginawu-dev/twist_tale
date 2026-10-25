@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twist Tale Privacy Policy</title>
+    <meta name="description" content="How Twist Tale handles Sign in with Apple, story content, Gemini AI processing, Chapter Credits, purchases, and account deletion.">
+    <link rel="canonical" href="https://ginawu-dev.github.io/twist_tale/privacy/">
+    <meta property="og:title" content="Twist Tale Privacy Policy">
+    <meta property="og:description" content="Privacy information for Twist Tale interactive stories.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ginawu-dev.github.io/twist_tale/privacy/">
+    <link rel="stylesheet" href="../assets/style.css">
+  </head>
+  <body>
+    <header class="site-header shell"><a class="brand" href="../" aria-label="Twist Tale home"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-name">Twist Tale</span></a><nav class="nav" aria-label="Main navigation"><a href="../">Home</a><a href="../support/">Support</a></nav></header>
+    <main class="legal shell">
+      <p class="eyebrow">Twist Tale</p><h1>Privacy Policy</h1><p class="updated">Last updated: 25 October 2026</p>
+      <div class="legal-note">This policy describes the current implementation. The account-deletion readiness control is currently disabled, so in-app account deletion is not yet available.</div>
+
+      <h2>What Twist Tale does</h2>
+      <p>Twist Tale is an interactive storytelling app. You create characters and story setups, make choices, and receive generated chapters. Existing saved chapters remain readable without Chapter Credits.</p>
+
+      <h2>Information associated with your account</h2>
+      <p>When you sign in with Apple, Twist Tale receives a verified Apple account subject from the authentication exchange and uses it as the account identity. The service also maintains short-lived authenticated sessions. Session tokens authorize requests and are not intended to be displayed in the app or shared with support.</p>
+      <p>Depending on the features you use, server-side records may include account-scoped Credit balances, reservations, settlement state, purchase transaction records, idempotency records, and generation records needed to deliver chapters safely. A generation record can contain submitted generation context and a generated chapter result while a request is completed or recovered. Bounded, sanitized aggregate AI-usage metrics are also retained. Operational logs do not intentionally include passwords, JWTs, full transaction payloads, prompts, or generated story text; this does not mean server-side generation records contain no story content.</p>
+
+      <h2>Story content and AI processing</h2>
+      <p>Character descriptions, story prompts, choices, and chapter context are used to generate your requested story. The relevant generation request is sent from the Twist Tale backend to Google Gemini, and generated output is checked by content-moderation systems before it is returned or stored. Story-related content can therefore be processed by an AI service; do not submit information you do not want processed for generation or moderation.</p>
+      <p>Cloudflare Workers and Durable Objects operate the authenticated API, generation coordination, Credit reservation and settlement, purchase records, and related state. Server-side generation records, including content needed to complete or recover a request, may be retained for idempotency, recovery, abuse prevention, and account operations. No fixed retention period is promised; retention depends on record type, operational need, and legal obligations.</p>
+
+      <h2>Local storage</h2>
+      <p>Saved stories and chapters are stored locally by the iOS app using SwiftData. Local records are associated with the authenticated account where available so the app can preserve ownership boundaries. Local deletion is separate from server-side deletion: signing out does not itself delete stories, and a failed deletion does not remove them locally. A confirmed account deletion removes locally owned stories as part of the app’s cleanup flow.</p>
+
+      <h2>Chapter Credits and Apple purchases</h2>
+      <p>Eligible verified accounts receive five lifetime free Chapter Credits. Each successfully generated chapter uses one Credit. Purchased Credits are one-time consumables that do not expire while the account remains active. The backend is authoritative for available, reserved, and consumed balances.</p>
+      <p>Apple StoreKit transactions are verified server-side before purchased Credits are delivered. Verified transaction identifiers help prevent duplicate delivery or transfer of one purchase to multiple Twist Tale accounts. Apple transaction, refund, and revocation records may be retained for purchase verification, fraud prevention, support, and legal accounting.</p>
+
+      <h2>Account deletion</h2>
+      <p>Twist Tale is designed to support account deletion from Settings, but the backend deletion-readiness control is currently disabled. Do not treat a disabled control or a support email as a completed deletion. When deletion is made available, it will be an authenticated server-side operation that removes or invalidates account access and associated account data that can be safely identified.</p>
+      <p>Deletion is intended to remove saved stories belonging to the account and make remaining free and purchased Credits unusable. No automatic refund is promised. Limited records, such as transaction ownership or fraud-prevention tombstones, may need to be retained to prevent replay or re-granting. Re-registering with the same Apple identity is not intended to restore deleted Credits or grant the lifetime free allocation again.</p>
+
+      <h2>Security and service providers</h2>
+      <p>Twist Tale uses Apple for Sign in with Apple and StoreKit transactions, Cloudflare for Workers and Durable Objects infrastructure, and Google Gemini for story generation and moderation-related processing. These providers may process technical information required to provide their services and may process information internationally under their own terms and policies.</p>
+      <p>The app and service use authenticated transport and access controls appropriate to the feature. No claim of end-to-end encryption is made. Keep your Apple account and session access secure, and do not send credentials, tokens, or signed transaction payloads to support.</p>
+
+      <h2>Children’s privacy</h2>
+      <p>Twist Tale is not directed to children under the minimum age required by applicable law. Do not use the service or submit information if you are not permitted to do so in your jurisdiction. If you believe a child has provided personal information, contact support so the request can be reviewed.</p>
+
+      <h2>Privacy requests and contact</h2>
+      <p>For privacy questions or account-related requests, contact <a href="mailto:littlelucktoday@protonmail.com">littlelucktoday@protonmail.com</a>. Never send a password, Apple identity token, session JWT, or complete Apple transaction JWS. Support may need non-sensitive information such as app version, device environment, approximate time, and a short description.</p>
+
+      <h2>Policy updates</h2>
+      <p>This policy may be updated when Twist Tale’s features, providers, or legal requirements change. The date above identifies the version currently published.</p>
+    </main>
+    <footer class="site-footer"><div class="shell footer-row"><p>Twist Tale privacy information.</p><nav class="footer-links" aria-label="Footer navigation"><a href="../">Home</a><a href="../support/">Support</a></nav></div></footer>
+  </body>
+</html>
